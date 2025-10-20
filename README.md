@@ -51,7 +51,7 @@ This project is licensed under the MIT License. See the `LICENSE` file for detai
 ## Contact
 
 If you have any questions or suggestions, feel free to reach out:  
-[GitHub Profile](https://github.com/egeturediCo
+[GitHub Profile](https://github.com/egeturediCode)
 
 
 
