@@ -1,0 +1,130 @@
+// NavBar & InfoBar scroll functions
+
+let lastScrollTopInfo = 0;
+const infoBar = document.querySelector('.info-bar');
+
+window.addEventListener('scroll', () => {
+    const scrollTopInfo = window.scrollY;
+
+    if (scrollTopInfo > lastScrollTopInfo) {
+        infoBar.classList.add('hidden');
+    } else {
+        infoBar.classList.remove('hidden');
+    }
+
+    lastScrollTopInfo = scrollTopInfo;
+});
+
+let lastScrollTopNav = 0;
+const navBar = document.querySelector('nav');
+
+window.addEventListener('scroll', () => {
+    const scrollTopNav = window.scrollY;
+
+    if (scrollTopNav > lastScrollTopNav) {
+        navBar.classList.add('hidden');
+    } else {
+        navBar.classList.remove('hidden');
+    }
+
+    lastScrollTopNav = scrollTopNav;
+});
+
+// scroll from the links functions
+
+function scrollToElement(elementSelector, instance = 0) {
+    const elements = document.querySelectorAll(elementSelector);
+    if (elements.length > instance) {
+        elements[instance].scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+const link1 = document.querySelectorAll(".link1");
+const link2 = document.querySelectorAll(".link2");
+const link3 = document.querySelectorAll(".link3");
+const link4 = document.querySelectorAll(".link4");
+const link5 = document.querySelectorAll(".link5");
+const link6 = document.querySelectorAll(".link6");
+const link7 = document.getElementById("link7");
+const link8 = document.getElementById("link8");
+
+link1.forEach(link => {
+    link.addEventListener('click', () =>{
+        scrollToElement('.container');
+    });
+})
+link2.forEach(link => {
+    link.addEventListener('click', () =>{
+        scrollToElement('.container',1);
+    });
+});
+link3.forEach(link => {
+    link.addEventListener('click', () =>{
+        scrollToElement('.container',2);
+    });
+});
+link4.forEach(link => {
+    link.addEventListener('click', () =>{
+        scrollToElement('.container',3);
+    });
+});
+link5.forEach(link => {
+    link.addEventListener('click', () =>{
+        scrollToElement('.container',4);
+    });
+});
+link6.forEach(link => {
+    link.addEventListener('click', () =>{
+        scrollToElement('.container',4);
+    });
+});
+
+
+link7.addEventListener('click', () =>{
+    scrollToElement('.container',1);
+});
+link8.addEventListener('click', () =>{
+    scrollToElement('.container',4);
+});
+
+
+// nav underline function 
+
+
+const allLinks = document.querySelectorAll('.nav-links .link a');
+const sections = document.querySelectorAll('.container');
+
+window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        const sectionTop = rect.top;
+        const sectionBottom = rect.bottom;
+
+        if (sectionTop <= window.innerHeight / 2.30 && sectionBottom >= window.innerHeight / 3) {
+            current = section.getAttribute('id');
+        } else if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight -200) {
+            current = section.getAttribute('id');
+        }
+    });
+    allLinks.forEach(link => {
+    link.classList.remove('active');
+    if (link.dataset.sectionName === current) {
+        link.classList.add('active');
+    }
+    });
+});
+
+
+// side-bar menu
+
+
+const menuOpen = document.getElementById('menu-open');
+const menuClose = document.querySelectorAll('.menu-close');
+const sidebar = document.querySelector('.sidebar');
+
+menuOpen.addEventListener('click', () => sidebar.style.right = '0');
+
+menuClose.forEach(button => {
+    button.addEventListener('click', () => sidebar.style.right = '-100%');
+})

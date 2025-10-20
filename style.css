@@ -1,0 +1,1779 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&display=swap');
+
+
+
+:root {
+    --color1: #171010;
+    --color2: #818181;
+    --color3: #d3dad9;
+    --color4: #872341;
+    --color5: #D8D2C2;
+    --color6: #26262c;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    outline: none;
+    border: none;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+img {
+    width: 100%;
+    height: auto;
+    display: flex;
+    object-fit: cover;
+    user-select: none;
+}
+a {
+    text-decoration: none;
+}
+li {
+    list-style: none;
+}
+
+body, html {
+    width: 100vw;
+    background-color: #1A1A1D;
+    padding: 0;
+    margin: 0;
+}
+
+.info-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color6);
+    height: 20px;
+    position: fixed;
+    top: 0;
+    max-width: 100%;
+    width: 100%;
+    z-index: 999;
+    transition: top 0.3s ease;
+    overflow-x: hidden;
+}
+.info-bar.hidden {
+    top: -20px;
+}
+.info-bar p {
+    margin: auto;
+    font-size: 14px;
+    color: var(--color3);
+}
+.info-bar p .symbol {
+    margin: 0 30px;
+}
+
+.sidebar {
+    position: fixed;
+    right: -100%;
+    height: 100vh;
+    width: max-content;
+    background-color: var(--color6);
+    padding: 43px 40px 20px 25px;
+    display: flex;
+    gap: 60px;
+    flex-direction: column;
+    z-index: 999999;
+    transition: right 0.45s ease;
+    box-shadow: -10px 0 25px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar .top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.sidebar .top div {
+    width: 100%; 
+    display: flex;
+    justify-content: space-between;
+}
+
+.sidebar .top div button {
+    background-color: transparent;
+    padding: 0;
+}
+
+.sidebar .top div button > i {
+    font-size: 23px;
+    color: var(--color3);
+    margin-top: -3px;
+}
+
+.sidebar .top div h5 {
+    font-size: 16px;
+    text-transform: uppercase;
+    color: var(--color3);
+}
+
+.sidebar .menu {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+
+.sidebar .menu ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sidebar .menu ul li {
+    margin-bottom: 12px;
+    display: flex;
+    gap: 20px;
+    cursor: pointer;
+}
+
+.sidebar .menu ul li a {
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3 ease;
+    color: var(--color3);
+}
+
+
+
+nav {
+    background-color: var(--color3);
+    height: 80px;
+    max-width: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 20px 65px;
+    align-items: center;
+    margin: auto;
+    position: sticky;
+    top: 20px;
+    z-index: 999;
+    transition: top 0.3s ease;
+    box-shadow:  0 1px 3px rgb(0 0 0 / 10%), 0 2px 2px rgb(0 0 0 / 6%), 0 0 2px rgb(0 0 0 / 7%);
+    box-sizing: inherit;
+
+}
+nav.hidden {
+    top: 0vh;
+}
+
+nav button {
+    font-size: 24px;
+    background-color: transparent;
+    cursor: pointer;
+    display: none;
+    margin: 0;
+}
+
+nav .nav-links {
+    display: flex;
+    gap: 40px;
+    user-select: none;
+}
+
+nav .nav-links li a {
+    color: var(--color1);
+    letter-spacing: 1px;
+    font-size: 14.4px;
+    cursor: pointer;
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: calc(50% - 4.4px);
+    bottom: -10px;
+    height: 1px;
+    width: 0;
+    border-radius: 1px;
+    background: var(--color1);
+    transition: width 0.3s ease, left 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-links .active::after {
+    width: 75%;
+    left: 50%;
+}
+
+nav .right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav .nav-logo {
+    max-width: 160px;
+    min-width: 160px;
+}
+
+nav a {
+    color: var(--color4);
+    font-weight: 400;
+}
+
+.container-second,
+.container-third,
+.container-fourth,
+.container-last {
+    scroll-margin-top: calc(80px + 20px - 20px); 
+    padding: 30px 40px;
+    width: 100%;
+    max-width: 100%;
+}
+
+.container-first {
+    max-width: 100%;
+    height: 840px;
+    background-color: var(--color3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;    
+    scroll-margin-top: calc(80px + 20px);
+    padding: 23px 0px;
+}
+
+.container-first .info {
+    width: 57%;
+    height: 100%;
+    text-align: center;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+}
+
+.container-first .info .motto{
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.container-first .info .motto h2 {
+    font-size: 40px;
+    line-height: 53px;
+    user-select: none;
+}
+
+.container-first .info .motto h2 span {
+    font-family: 'Parisienne', cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 120px;
+    color: #982b4c;
+    user-select: none;
+}
+
+.container-first .info .motto p {
+    color: var(--color2);
+    padding: 0 8px;
+}
+
+.container-first .info .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.container-first .info .buttons button {
+    padding: 10px 36px;
+    background-color: var(--color4);
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--color3);
+}
+.container-first .image {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    align-items: flex-end;
+    overflow: hidden;
+}
+
+.container-first .image .left{
+    height: 74%;
+    flex: 1;
+    border-radius: 0px 8px 8px 0px;
+    overflow: hidden;
+}
+.container-first .image .center{
+    height: 74%;
+    flex: 1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+.container-first .image .right{
+    height: 74%;
+    flex: 1;
+    border-radius: 8px 0px 0px 8px;
+    overflow: hidden;
+}
+
+.container-first .image img {
+    min-width: 100%;
+    min-width: 100%;
+    height: 100%;
+}
+
+
+.container-second {
+    min-height: 88vh;
+    height: 840px;
+    background-color: var(--color6);
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin-top: 20px;
+}
+
+.container-second .left {
+    width: 55%;
+    height: 100%;
+    display: flex;
+    gap: 0;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px 30px;
+}
+
+.container-second .left hr {
+    height: 1px; 
+    width: 76%; 
+    background-color: var(--color4); 
+    margin-bottom: 10px;
+}
+
+.container-second .left h4 {
+    color: var(--color3);
+    font-size: 42px;
+}
+
+.container-second .left .content {
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    height: 78%;
+    justify-content: center;
+}
+
+.container-second .left .content div {
+    padding: 0;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.container-second .left .content div img {
+    width: 100px; 
+    height: 100px;
+}
+
+.container-second .left .content div p {
+    color: var(--color2);
+    font-size: 16px;
+    line-height: 30px;
+
+}
+
+.container-second .right {
+    width: 45%;
+    min-height: 100%;
+}
+.container-second .right .img {
+    width: 100%;
+    height: 100%;
+}
+.container-second .right .img img {
+    height: 100%;
+}
+
+
+.container-third {
+    min-height: 38vh;
+    height: 370px;
+    background-color: var(--color3);
+    display: flex;
+    flex-direction: column;
+    margin-top: 20px;
+}
+.container-third h4 {
+    font-size: 28px;
+    margin-top: -20px;
+}
+
+.container-third .items {
+    width: 100%;
+    height: 100%;
+    overflow-x: auto;
+    display: flex;
+    margin-top: 10px;
+    gap: 2%;
+    flex-direction: row;
+    -webkit-overflow-scrolling: touch;
+}
+
+.container-third .items .item {
+    display: flex;
+    min-width: 49%;
+    max-width: 49%;
+    height: 100%;
+    background-color: var(--color6);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.container-third .items .item div {
+    width: 50%;
+    min-height: 100%;
+    max-height: 100%;
+    overflow: hidden;
+}
+
+.container-third .items .item .content {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+    align-items: center;
+    justify-content: space-between;
+    text-align: start;
+    padding: 40px 12px 10px 12px;
+}
+
+.container-third .items .item .content button {
+    padding: 7px 30px;
+    background-color: var(--color4);
+    font-size: 13px;
+    border-radius: 8px;
+    cursor: pointer;
+    color: var(--color3);
+    margin-left: auto;
+    margin-top: 20px;
+}
+
+.container-third .items .item .content h4 {
+    color: var(--color3);
+    font-size: 24px;
+}
+
+.container-third .items .item .content p {
+    color: var(--color2);
+}
+
+.container-third .items .item div img {
+    height: 100%;
+    object-fit: cover;
+}
+
+.container-fourth {
+    min-height: 88vh;
+    height: 840px;
+    min-width: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color3);
+    margin-top: 20px;
+    gap: 12px;
+    padding: 10px 40px 30px 40px;
+}
+
+.container-fourth h2 {
+    color: var(--color1);
+    font-size: 30px;
+    height: max-content;
+}
+
+.container-fourth .our-services {
+    display: grid;
+    max-height: calc(100% - 50px);
+    max-width: 100%;
+    min-height: calc(100% - 50px);
+    min-width: 100%;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 10px;
+    overflow: hidden;
+}
+
+.container-fourth .item {
+    border-radius: 13px;
+    background-color: var(--color6);
+    max-height: 100%;
+    min-height: 80%;
+    padding: 3px;
+    position: relative;
+}
+
+.container-fourth .item .content {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-fourth .item .content .img {
+    width: 100%;
+    min-height: 77%;
+    max-height: 77%;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-fourth .item .content h4 {
+    margin-top: 14px;
+    color: var(--color3);
+    font-size: 32px;
+}
+
+.container-fourth .item .content p {
+    color: var(--color2);
+    font-size: 13.6px;
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.container-fourth .item .content button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 7px 7px 0;
+    border-radius: 6px;
+    padding: 5px 14px;
+    cursor: pointer;
+    background-color: var(--color4);
+    color: var(--color3);
+}
+
+.container-fourth .item:hover .content .img {
+    min-height: 45%;
+    max-height: 45%;
+    transition: all 0.4s ease;
+}
+
+.container-fourth .item:hover .content p {
+    opacity: 1;
+    transition: all 0.4s ease;
+}
+
+.container-last {
+    min-height: 40vh;
+    min-height: 390px;
+    height: auto;
+    background-color: var(--color6);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    overflow-x: hidden;
+}
+
+.container-last .top {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 0px;
+    margin-top: 10px;
+    overflow-x: hidden;
+}
+
+.container-last .top hr {
+    height: 1px; 
+    width: 90%; 
+    background-color: var(--color2); 
+    margin-bottom: 7px; 
+    display: none;
+}
+
+.container-last .top .company-info {
+    width: 26%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+    text-align: start;
+}
+
+.container-last .top .company-info img {
+    width: 100%;
+}
+
+.container-last .top .company-info p {
+    color: var(--color2);
+}
+
+.container-last .top .company-info ul {
+    display: flex;
+    list-style: none;
+    gap: 10px;
+}
+
+.container-last .top .company-info ul a {
+    font-size: 27px;
+    color: var(--color2);
+}
+
+.container-last .top .connection-info {
+    width: 37%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.container-last .top .connection-info h4 {
+    color: var(--color3);
+    font-size: 20px;
+}
+
+.container-last .top .connection-info p {
+    color: var(--color2);
+    font-size: 15px;
+}
+
+.container-last .connection-info p a {
+    color: #c2bbbb;
+}
+
+.container-last .top .connection-info,
+.container-last .top .company-info {
+    padding-right: 30px;
+    overflow: hidden;
+}
+
+.container-last .top .references-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.container-last .top .references-info h4 {
+    color: var(--color3);
+    font-size: 20px;
+}
+
+.container-last .top .references-info ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    gap: 10px;
+}
+
+.container-last .top .references-info ul li {
+    color: var(--color2);
+    font-size: 15px;
+}
+
+
+.container-last .bottom {
+    width: 100%;
+}
+
+.container-last .bottom p {
+    width: 100%;
+    height: max-content;
+    color: var(--color3);
+    font-size: 14px;
+    margin-left: auto;
+    margin-bottom: -15px;
+    text-align: end;
+}
+
+
+
+
+/* Laptop/PC için media kodları ----------------------------- */
+
+
+@media screen and (max-width:1250px){
+
+    .info-bar p {
+        font-size: 13px;
+    }
+    
+    nav {
+        padding: 14px 25px;
+    }
+
+    nav .nav-links {
+        gap: 28px;
+    }
+
+    nav .nav-links li a {
+        font-size: 14px;
+    }
+
+    nav .nav-logo {
+        max-width: 140px;
+        min-width: 140px;
+    }
+
+    nav a {
+    font-weight: 400;
+    font-size: 15px;
+    }
+
+    .container-second,
+    .container-third,
+    .container-fourth,
+    .container-last {
+        scroll-margin-top: calc(80px + 20px - 20px); 
+    }
+
+    .container-first .info {
+        width: 67%;
+    }
+
+    .container-first .info .motto h2 {
+        font-size: 37px;
+        line-height: 48px;
+    }
+
+    .container-first .info .motto h2 span {
+        font-family: 'Parisienne', cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 110px;
+        color: #982b4c;
+    }
+
+    .container-first .info .motto p {
+        color: var(--color2);
+        font-size: 15px;
+    }
+
+
+    .container-first .image {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: hidden;
+    }
+
+    .container-first .image div {
+        height: 74%;
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .container-first .image img {
+        width: 480px;
+        height: 100%;
+    }
+
+    .container-second {
+        margin-top: 15px;
+    }
+
+    .container-second .left {
+        width: 55%;
+        height: 100%;
+        padding: 16px 24px;
+    }
+
+    .container-second .left h4 {
+        font-size: 36px;
+    }
+
+    .container-second .left .content {
+        gap: 40px;
+    }
+
+    .container-second .left .content div {
+        gap: 18px;
+    }
+
+    .container-second .left .content div p {
+        font-size: 14px;
+        line-height: 26px;
+
+    }
+
+    .container-third {
+        margin-top: 15px;
+    }
+    .container-third h4 {
+        font-size: 25px;
+    }
+
+    .container-third .items .item .content {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        align-items: center;
+        justify-content: space-between;
+        text-align: start;
+        padding: 40px 8px 10px 8px;
+    }
+
+    .container-third .items .item .content button {
+        padding: 7px 24px;
+        font-size: 12px;
+        margin-top: 16px;
+    }
+
+    .container-third .items .item .content h4 {
+        font-size: 20px;
+    }
+
+    .container-third .items .item .content p {
+        color: var(--color2);
+        font-size: 15px;
+    }
+
+    .container-fourth {
+    margin-top: 15px;
+    }
+
+    .container-fourth h2 {
+        color: var(--color1);
+        font-size: 28px;
+        height: max-content;
+    }
+
+    .container-fourth .item .content h4 {
+        margin-top: 14px;
+        font-size: 25px;
+    }
+
+    .container-fourth .item .content button {
+        font-size: 12.3px;
+    }
+
+    .container-last {
+        margin-top: 15px;
+        padding: 32px 20px;
+    }
+
+    .container-last .top {
+        gap: 50px;
+        margin-top: 7px;
+    }
+
+    .container-last .top .company-info {
+        width: 25%;
+        gap: 30px;
+    }
+
+    .container-last .top .company-info img {
+        width: 100%;
+    }
+
+    .container-last .top .company-info p {
+        margin-left: 26px;
+        font-size: 15px;
+    }
+
+    .container-last .top .connection-info {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .container-last .top .connection-info h4 {
+        font-size: 18px;
+    }
+
+    .container-last .top .connection-info p {
+        font-size: 14px;
+    }
+
+    .container-last .top .connection-info,
+    .container-last .top .company-info {
+        padding-right: 30px;
+    }
+
+    .container-last .top .references-info {
+        flex: 1;
+    }
+
+    .container-last .top .references-info h4 {
+        font-size: 18px;
+    }
+
+    .container-last .top .references-info ul li {
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width:1060px) {
+    
+    nav {
+        padding: 14px 17px;
+    }
+    nav .right {
+        display: none;
+    }
+    nav .nav-links {
+        gap: 25px;
+    }
+
+    nav .nav-links li a {
+        font-size: 14px;
+    }
+
+    nav .nav-logo {
+        max-width: 120px;
+        min-width: 120px;
+    }
+
+    nav .right .phone-number-link {
+        display: none;
+    }
+
+    .container-second,
+    .container-third,
+    .container-fourth,
+    .container-last {
+        scroll-margin-top: calc(80px + 20px - 20px); 
+    }
+
+    .container-first {
+        height: 900px;
+    }
+    .container-first .image .center {
+        display: none;
+    }
+
+    .container-first .info {
+        width: 74%;
+    }
+
+    .container-first .info .motto h2 {
+        font-size: 34px;
+        line-height: 44px;
+    }
+
+    .container-first .info .motto h2 span {
+        font-family: 'Parisienne', cursive;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 105px;
+        color: #982b4c;
+    }
+
+
+    .container-first .info .buttons button {
+        padding: 7px 25px;
+    }
+
+    .container-first .image {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: hidden;
+    }
+
+    .container-first .image div {
+        height: 74%;
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .container-first .image img {
+        width: 480px;
+        height: 100%;
+    }
+
+    .container-second {
+        min-height: 88vh;
+        height: 1000px;
+        margin-top: 15px;
+        flex-direction: column;
+    }
+
+    .container-second .left {
+        width: 100%;
+        height: 60%;
+        padding: 0px 24px;
+    }
+
+    .container-second .left h4 {
+        font-size: 36px;
+    }
+
+    .container-second .left .content {
+        gap: 40px;
+    }
+
+    .container-second .left .content div {
+        gap: 18px;
+    }
+
+    .container-second .left .content div p {
+        font-size: 14px;
+        line-height: 26px;
+
+    }
+
+    .container-second .right {
+        width: 100%;
+        max-height: 40%;
+        min-height: 40%;
+    }
+
+    .container-second .right .img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container-third {
+        margin-top: 15px;
+    }
+    .container-third h4 {
+        font-size: 25px;
+    }
+
+    .container-third .items .item {
+        min-width: 98%;
+        max-width: 98%;
+    }
+
+     .container-third .items .item .content button {
+        font-size: 13.3px;
+     }
+
+    .container-fourth {
+        margin-top: 15px;
+        height: 1200px;
+    }
+
+    .container-fourth .our-services {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .container-fourth h2 {
+        font-size: 28px;
+    }
+
+    .container-fourth .item .content h4 {
+        margin-top: 14px;
+        font-size: 23px;
+    }
+
+    .container-fourth .item .content button {
+        font-size: 13.3px;
+        margin: 0 7px 7px 0;
+        padding: 5px 20px;
+    }
+
+    .container-fourth .item .content .img {
+        min-height: 77%;
+        max-height: 77%;
+    }
+
+    .container-fourth .item .content p {
+        opacity: 0;
+    }
+
+    .container-fourth .item:hover .content .img {
+        min-height: 45%;
+        max-height: 45%;
+    }
+
+    .container-last {
+        margin-top: 15px;
+        padding: 22px 34px;
+    }
+
+    .container-last .top {
+        gap: 30px;
+        margin-top: 7px;
+    }
+
+    .container-last .top .company-info {
+        width: 20%;
+        gap: 30px;
+    }
+
+    .container-last .top .company-info img {
+        width: 100%;
+    }
+
+    .container-last .top .company-info p {
+        font-size: 15px;
+    }
+
+    .container-last .top .connection-info {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        gap: 28px;
+    }
+
+    .container-last .top .connection-info h4 {
+        font-size: 18px;
+    }
+
+    .container-last .top .connection-info p {
+        font-size: 14px;
+    }
+
+    .container-last .top .references-info {
+        width: 40%;
+        gap: 28px;
+    }
+
+    .container-last .top .references-info h4 {
+        font-size: 18px;
+    }
+
+    .container-last .top .references-info ul li {
+        font-size: 14px;
+    }
+
+}
+
+@media screen and (max-width:800px) {
+
+    .sidebar .top div h5 {
+        font-size: 15px;
+    }
+    nav .nav-links{
+        display: none;
+    }
+    nav .right {
+        display: flex;
+    }
+
+    nav .right .phone-number-link {
+        display: block;
+    }
+
+    nav button {
+        display: block;
+    }
+
+    .container-second,
+    .container-third,
+    .container-fourth,
+    .container-last {
+        scroll-margin-top: calc(80px + 20px - 20px); 
+    }
+
+    .container-first {
+        width: 100%;
+    }
+
+    .container-first .image .right {
+        display: none;
+    }
+
+    .container-first .image .left{
+        border-radius: 0px;
+    }
+
+    .container-first .info {
+        width: 90%;
+    }
+
+    .container-first .info .motto h2 {
+        font-size: 34px;
+        line-height: 44px;
+    }
+
+    .container-first .image {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        gap: 20px;
+        justify-content: center;
+        align-items: flex-end;
+        overflow: hidden;
+    }
+
+    .container-first .image div {
+        height: 74%;
+        width: 100%;
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    .container-first .image img {
+        width: 480px;
+        height: 100%;
+    }
+
+    .container-second {
+        min-height: 88vh;
+        height: 800px;
+        margin-top: 15px;
+        flex-direction: column;
+        gap: 20px;
+        padding: 0;
+    }
+
+    .container-second .left {
+        width: 100%;
+        height: 70%;
+        padding: 20px 24px;
+    }
+
+    .container-second .left h4 {
+        font-size: 36px;
+    }
+
+    .container-second .left .content {
+        gap: 30px;
+    }
+
+    .container-second .left .content div {
+        gap: 15px;
+    }
+
+    .container-second .left .content div img {
+        height: 70px;
+        width: 70px;
+    }
+
+    .container-second .left .content div p {
+        font-size: 14px;
+        line-height: 26px;
+    }
+
+    .container-second .right {
+        width: 100%;
+        max-height: calc(30% - 20px);
+        min-height: calc(30% - 20px);
+    }
+
+    .container-second .right .img {
+        width: 100%;
+        height: 100%;
+    }
+
+    .container-third {
+        margin-top: 15px;
+        height: 340px;
+        padding: 30px 20px;
+    }
+    .container-third h4 {
+        font-size: 25px;
+    }
+
+    .container-third .items .item {
+        min-width: 100%;
+        max-width: 100%;
+    }
+
+    .container-third .items .item .content button {
+        font-size: 13.3px;
+        padding: 6px 26px;
+    }
+
+    .container-fourth {
+        margin-top: 15px;
+        height: 1200px;
+        padding: 10px 20px 30px 20px;
+    }
+
+    .container-fourth .our-services {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .container-fourth h2 {
+        font-size: 28px;
+    }
+
+    .container-fourth .item .content h4 {
+        margin-top: 14px;
+        font-size: 23px;
+    }
+
+    .container-fourth .item .content button {
+        font-size: 13.3px;
+        margin: 0 7px 7px 0;
+        padding: 5px 20px;
+    }
+
+    .container-fourth .item .content .img {
+        min-height: 77%;
+        max-height: 77%;
+    }
+
+    .container-fourth .item .content p {
+        opacity: 0;
+    }
+
+    .container-fourth .item:hover .content .img {
+        min-height: 45%;
+        max-height: 45%;
+    }
+
+    .container-last {
+        margin-top: 15px;
+        padding: 32px 14px;
+    }
+   
+    .container-last .top {
+        gap: 30px;
+        margin-top: 7px;
+        margin-bottom: 30px;
+    }
+
+     .container-last .top hr {
+        display: block;
+    }
+
+    .container-last .top .company-info {
+        width: 100%;
+        gap: 15px;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .container-last .top .company-info img {
+        width: 200px;
+    }
+
+    .container-last .top .company-info p {
+        margin-left: 24px;
+        font-size: 14px;
+    }
+
+    .container-last .top .connection-info {
+        display: flex;
+        width: 50%;
+        flex-direction: column;
+        gap: 28px;
+        margin-left: 19px;
+    }
+
+    .container-last .top .connection-info h4 {
+        font-size: 17px;
+    }
+
+    .container-last .top .connection-info p {
+        font-size: 13.3px;
+    }
+    .container-last .top .connection-info,
+    .container-last .top .company-info {
+        padding-right: 28px;
+    }
+
+    .container-last .top .references-info {
+        flex: 1; 
+        width: 100%;
+        margin-right: 17px;
+    }
+
+    .container-last .top .references-info h4 {
+        font-size: 17px;
+    }
+
+    .container-last .top .references-info ul li {
+        font-size: 13.3px;
+    }
+
+    .container-last .bottom p {
+        font-size: 13.3px;
+    }
+}
+
+@media screen and (max-width:660px) {
+
+    .info-bar p {
+        font-size: 12px;
+    }
+    .info-bar p span {
+        margin: 10px;
+    }
+    nav {
+        height: 60px;
+    }
+
+    nav button {
+        display: block;
+    }
+
+    .container-second,
+    .container-third,
+    .container-fourth,
+    .container-last {
+        scroll-margin-top: calc(60px + 20px - 20px); 
+    }
+
+
+    .container-first {
+        height: 720px;
+        scroll-margin-top: calc(60px + 20px - 20px); 
+
+    }
+    .container-first .info .motto h2 {
+        font-size: 28px;
+        line-height: 34px;
+    }
+
+    .container-first .info .motto h2 span {
+        font-size: 80px;
+    }
+
+    .container-first .info {
+        width: 100%;
+        margin-top: 90px;
+        gap: 34px;
+    }
+
+    .container-first .image {
+        display: none;
+    }
+
+    .container-second {
+        padding: 0;
+    }
+
+    .container-second .left {
+        gap: 30px;
+    }
+
+    .container-second .left hr {
+        margin-top: -30px;
+    }
+
+    .container-third {
+        padding: 30px 10px;
+    }
+
+    .container-fourth {
+        height: 1500px;
+        gap: 9px;
+        min-height: 88vh;
+        padding: 10px 10px 30px 10px;
+    }
+
+    .container-fourth .our-services {
+        margin-top: 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .container-fourth .item .content button {
+        font-size: 13.3px;
+        margin: 0 7px 7px 0;
+        padding: 5px 16px;
+    }
+
+    .container-fourth .item .content .img {
+        min-height: 0%;
+        max-height: 0%;
+    }
+
+    .container-fourth .item .content p {
+        opacity: 1;
+    }
+
+    .container-fourth .item:hover .content .img {
+        min-height: 0%;
+        max-height: 0%;
+    }
+
+    .container-last {
+        padding: 30px 5px;
+    }
+
+}
+
+@media screen and (max-width:555px) {
+
+    .sidebar .top div h5 {
+        font-size: 14.4px;
+    }
+
+    .sidebar .menu ul li a {
+        font-size: 13.4px;
+    }
+
+    .info-bar p .symbol {
+    margin: 0 10px;
+    }
+
+    nav button {
+        display: block;
+    }
+
+    .container-first {
+        height: 720px;
+    }
+    
+    .container-first .info .motto h2 {
+        font-size: 27px;
+        line-height: 32px;
+    }
+
+    .container-first .info .motto h2 span {
+        font-size: 76px;
+    }
+
+    .container-first .info {
+        width: 100%;
+        margin-top: 100px;
+        gap: 34px;
+    }
+
+    .container-second .left {
+        height: 100%;
+        margin-top: -30px;
+        gap: 20px;
+    }
+    .container-second .left .content{
+        gap: 55px;
+    }
+
+    .container-second .left h4 {
+        font-size: 29px;
+        margin-bottom: -5px;
+    }
+    .container-second .left hr {
+        margin-top: -7px;
+    }
+
+    .container-second .right{
+        display: none;
+    }
+
+    .container-third {
+        height: 280px;
+        padding: 30px 10px;
+    }
+
+    .container-third .items .item .content h4 {
+        font-size: 19px;
+    }
+
+    .container-third .items .item .content p {
+        font-size: 13.3px;
+    }
+
+    .container-third .items .item div {
+        width: 40%;
+    }
+
+    .container-third .items .item .content {
+        width: 60%;
+    }
+
+    .container-last .top .company-info img {
+        width: 100px;
+    }
+    
+    .container-last  .bottom p {
+        font-size: 12.3px;
+        margin-top: 20px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .info-bar p .deleted {
+        display: none;
+    }
+
+    .info-bar p {
+        font-size: 12px;
+    }
+
+    .info-bar p span {
+        margin: 0 15px;
+    }
+
+    nav button {
+        display: block;
+    }
+
+    .container-first {
+        height: 720px;
+    }
+
+    .container-first .info .motto h2 {
+        font-size: 28px;
+        line-height: 30px;
+    }
+
+    .container-first .info .motto h2 span {
+        font-size: 70px;
+    }
+
+    .container-second {
+        height: 1160px;
+    }
+
+    .container-second .left {
+        justify-content: space-evenly;
+        gap: 20px;
+        padding: 0px 30px;
+        margin-top: -30px;
+    }
+
+    .container-second .left .content {
+        gap: 70px;
+    }
+
+    .container-second .left .content div{
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .container-second .left hr {
+        margin-top: -68px;
+    }
+
+    .container-third {
+        padding: 20px 10px;
+    }
+
+    .container-third h4 {
+        font-size: 22px;
+        margin-top: -2px;
+    }
+
+    .container-fourth {
+        height: 1300px;
+        gap: 9px;
+        min-height: 88vh;
+        padding: 10px 10px 30px 10px;   
+    }
+
+    .container-fourth h2{
+        font-size: 25px;
+    }
+
+    .container-fourth .our-services {
+        margin-top: 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+
+    .container-fourth .item .content button {
+        font-size: 13.3px;
+        margin: 0 7px 7px 0;
+        padding: 5px 16px;
+    }
+
+    .container-fourth .item .content .img {
+        min-height: 0%;
+        max-height: 0%;
+    }
+
+    .container-fourth .item .content p {
+        opacity: 1;
+        margin-left: 4px;
+    }
+
+    .container-fourth .item:hover .content .img {
+        min-height: 0%;
+        max-height: 0%;
+    }
+
+    .container-last {
+        padding: 40px 5px;
+    }
+    .container-last .top .connection-info,
+    .container-last .top .company-info {
+        padding-right: 15px;
+    }
+    .container-last .top .company-info {
+        flex-direction: column;
+    }
+    .container-last .top .company-info img {
+        width: 140px;
+    }
+    .container-last .top .connection-info,
+    .container-last .top .references-info {
+        width: 100%;
+        gap: 10px;
+    }
+    .container-last .top .references-info {
+        margin-top: 30px;
+        margin-left: 20px;
+    }
+
+}
+
+@media screen and (max-width:395px) {
+    nav .right {
+        gap: 10px;
+    }
+    nav .right a {
+        font-size: 13.4px;
+    }
+    nav .right a i {
+        display: none;
+    }
+    .container-first {
+        height: 720px;
+    }
+    .container-first .info .buttons {
+        gap: 14px;
+    }
+    .container-first .info .buttons button {
+         padding: 6px 23px;
+    }
+
+    .container-second .left .content {
+        gap: 34px;
+        margin-top: 20px;
+    }
+    .container-third{
+        height: 440px;
+    }
+    .container-third .items .item {
+        flex-direction: column;
+    }
+    .container-third .items .item div {
+        width: 100%;
+        max-height: 40%;
+        min-height: 40%;
+    }
+    .container-third .items .item .content {
+        width: 100%;
+        max-height: 60%;
+        min-height: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+}
+
+
+/* Tablet/Telefon için Media -------------------------------------- */
