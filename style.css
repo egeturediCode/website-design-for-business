@@ -1280,6 +1280,7 @@ nav a {
     .overlay {
         height: 80vh;
         width: 72vw;
+        padding: 40px 28px;
     }
 
     .overlay .top h4 {
@@ -1556,6 +1557,7 @@ nav a {
     .overlay {
         height: 82vh;
         width: 80vw;
+        padding: 35px 25px;
     }
 
     .overlay .top h4 {
@@ -1674,6 +1676,7 @@ nav a {
     .overlay {
         height: 82vh;
         width: 80vw;
+        padding: 35px 25px;
     }
 
     .overlay .top h4 {
@@ -1779,6 +1782,7 @@ nav a {
     .overlay {
         height: 85vh;
         width: 90vw;
+        padding: 35px 20px;
     }
 
     .overlay .top h4 {
@@ -1922,6 +1926,7 @@ nav a {
     .overlay {
         height: 80vh;
         width: 94vw;
+        padding: 30px 15px;
     }
 
     .overlay .top h4 {
