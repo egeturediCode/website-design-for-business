@@ -138,11 +138,56 @@ body, html {
 .sidebar .menu ul li a {
     font-size: 14px;
     font-weight: bold;
-    transition: all 0.3 ease;
+    transition: all 0.3s ease;
     color: var(--color3);
 }
 
+.overlay {
+    display: none;
+    opacity: 0;
+    flex-direction: column;
+    background-color: var(--color3);
+    position: fixed;
+    height: 86vh;
+    width: 60vw;
+    z-index: 9999999999999;
+    top: 50%;
+    left: 50%;
+    border: var(--color6) 1px solid;
+    border-radius: 10px;
+    transform: translate(-50%, -50%);
+    padding: 45px 30px;
+    transition: all 0.2s ease;
+    gap: 30px;
+}
 
+.active {
+    transition: all 0.2s ease;
+}
+
+.overlay .top {
+    display: flex;
+    justify-content: space-between;
+}
+
+.overlay .top h4 {
+    font-size: 27px;
+    color: var(--color6);
+}
+
+.overlay .top i {
+    font-size: 28px;
+}
+
+.overlay .content {
+    height: 100%;
+    width: 100%;
+    overflow-y: auto;
+}
+
+.overlay .content p{
+    font-size: 15px;
+}
 
 nav {
     background-color: var(--color3);
@@ -452,6 +497,7 @@ nav a {
     justify-content: space-between;
     text-align: start;
     padding: 40px 12px 10px 12px;
+    max-height: 100%;
 }
 
 .container-third .items .item .content button {
@@ -472,6 +518,8 @@ nav a {
 
 .container-third .items .item .content p {
     color: var(--color2);
+    max-height: 100%;
+    overflow: hidden;
 }
 
 .container-third .items .item div img {
@@ -554,6 +602,8 @@ nav a {
     font-size: 13.6px;
     opacity: 0;
     transition: all 0.4s ease;
+    max-height: 100%;
+    overflow: hidden;
 }
 
 .container-fourth .item .content button {
@@ -577,6 +627,19 @@ nav a {
 .container-fourth .item:hover .content p {
     opacity: 1;
     transition: all 0.4s ease;
+    min-height: 100%;
+}
+
+.container-fourth .item .no-hover .img {
+    min-height: 45%;
+    max-height: 45%;
+    transition: all 0.4s ease;
+}
+
+.container-fourth .item .no-hover p {
+   opacity: 1;
+    transition: all 0.4s ease;
+    min-height: 100%;
 }
 
 .container-last {
@@ -670,6 +733,7 @@ nav a {
     display: flex;
     flex-direction: column;
     overflow: hidden;
+    gap: 30px;
 }
 
 .container-last .top .references-info h4 {
@@ -952,6 +1016,23 @@ nav a {
         display: none;
     }
 
+    .overlay {
+        height: 82vh;
+        width: 70vw;
+    }
+
+    .overlay .top h4 {
+        font-size: 25px;
+    }
+
+    .overlay .top i {
+        font-size: 28px;
+    }
+
+    .overlay .content p{
+        font-size: 15px;
+    }
+
     .container-second,
     .container-third,
     .container-fourth,
@@ -1107,6 +1188,22 @@ nav a {
         max-height: 45%;
     }
 
+    .container-fourth .item:hover .content p {
+        opacity: 1;
+    }
+
+    .container-fourth .item .no-hover .img {
+        min-height: 45%;
+        max-height: 45%;
+        transition: all 0.4s ease;
+    }
+
+    .container-fourth .item .no-hover p {
+        opacity: 1;
+        transition: all 0.4s ease;
+        min-height: 100%;
+    }
+
     .container-last {
         margin-top: 15px;
         padding: 22px 34px;
@@ -1178,6 +1275,23 @@ nav a {
 
     nav button {
         display: block;
+    }
+
+    .overlay {
+        height: 80vh;
+        width: 72vw;
+    }
+
+    .overlay .top h4 {
+        font-size: 24px;
+    }
+
+    .overlay .top i {
+        font-size: 26px;
+    }
+
+    .overlay .content p{
+        font-size: 15px;
     }
 
     .container-second,
@@ -1337,6 +1451,22 @@ nav a {
         max-height: 45%;
     }
 
+    .container-fourth .item:hover .content p {
+        opacity: 1;
+    }
+
+    .container-fourth .item .no-hover .img {
+        min-height: 45%;
+        max-height: 45%;
+        transition: all 0.4s ease;
+    }
+
+    .container-fourth .item .no-hover p {
+        opacity: 1;
+        transition: all 0.4s ease;
+        min-height: 100%;
+    }
+
     .container-last {
         margin-top: 15px;
         padding: 32px 14px;
@@ -1421,6 +1551,23 @@ nav a {
 
     nav button {
         display: block;
+    }
+
+    .overlay {
+        height: 82vh;
+        width: 80vw;
+    }
+
+    .overlay .top h4 {
+        font-size: 24px;
+    }
+
+    .overlay .top i {
+        font-size: 26px;
+    }
+
+    .overlay .content p{
+        font-size: 15px;
     }
 
     .container-second,
@@ -1524,6 +1671,23 @@ nav a {
     margin: 0 10px;
     }
 
+    .overlay {
+        height: 82vh;
+        width: 80vw;
+    }
+
+    .overlay .top h4 {
+        font-size: 24px;
+    }
+
+    .overlay .top i {
+        font-size: 25px;
+    }
+
+    .overlay .content p{
+        font-size: 14.3px;
+    }
+
     nav button {
         display: block;
     }
@@ -1612,6 +1776,23 @@ nav a {
         margin: 0 15px;
     }
 
+    .overlay {
+        height: 85vh;
+        width: 90vw;
+    }
+
+    .overlay .top h4 {
+        font-size: 24px;
+    }
+
+    .overlay .top i {
+        font-size: 25px;
+    }
+
+    .overlay .content p{
+        font-size: 14.3px;
+    }
+
     nav button {
         display: block;
     }
@@ -1647,6 +1828,7 @@ nav a {
     .container-second .left .content div{
         flex-direction: column;
         gap: 30px;
+        text-align: center;
     }
 
     .container-second .left hr {
@@ -1736,6 +1918,24 @@ nav a {
     nav .right a i {
         display: none;
     }
+
+    .overlay {
+        height: 80vh;
+        width: 94vw;
+    }
+
+    .overlay .top h4 {
+        font-size: 23px;
+    }
+
+    .overlay .top i {
+        font-size: 25px;
+    }
+
+    .overlay .content p{
+        font-size: 14.3px;
+    }
+
     .container-first {
         height: 720px;
     }
