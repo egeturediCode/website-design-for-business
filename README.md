@@ -1,4 +1,4 @@
-# Business Frontend
+# Frontend Design for Business
 
 This project is a **frontend design and development** for a business website.  
 It focuses on providing a **modern, responsive, and user-friendly interface** built with UX (User Experience) principles in mind.
