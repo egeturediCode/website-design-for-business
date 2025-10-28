@@ -196,8 +196,18 @@ function addEllipsisOnOverflow() {
   });
 }
 
-window.addEventListener('load', addEllipsisOnOverflow);
-window.addEventListener('resize', addEllipsisOnOverflow);
+function handleFullscreenChange() {
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      addEllipsisOnOverflow();
+    });
+  });
+}
+
+document.addEventListener('fullscreenchange', handleFullscreenChange);
+document.addEventListener('webkitfullscreenchange', handleFullscreenChange);
+document.addEventListener('mozfullscreenchange', handleFullscreenChange);
+document.addEventListener('MSFullscreenChange', handleFullscreenChange);
 
 window.addEventListener('load', () => {
     const div = document.querySelectorAll('.our-services .item .content')
