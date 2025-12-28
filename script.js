@@ -137,6 +137,7 @@ const overlayCloseButton = document.querySelector('.overlayClose');
 const overlay = document.querySelector('.overlay');
 const itemTitle = document.querySelector('.overlay .top h4');
 const content = document.querySelector('.overlay .content p');
+const overlayItemImage = document.querySelector('.overlay .content img');
 
 overlayOpenButtons.forEach(button => {
     overlayOpenButtons.forEach(button => {
@@ -146,7 +147,9 @@ overlayOpenButtons.forEach(button => {
 
             content.innerHTML = closestP?.dataset.fullhtml || closestP?.innerHTML || '';
             itemTitle.innerHTML = closestT?.innerHTML || '';
-
+            const itemImageSrc = button.closest('.item')?.querySelector('img')?.src || '';
+            overlayItemImage.src = itemImageSrc;
+            
             document.body.style.pointerEvents = 'none';
             document.body.style.overflow = 'hidden';
             overlay.style.pointerEvents = 'auto';
