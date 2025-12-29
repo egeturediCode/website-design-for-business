@@ -18,7 +18,6 @@ It focuses on providing a **modern, responsive, and user-friendly interface** bu
 - **HTML5**  
 - **CSS3 / SCSS**  
 - **JavaScript (ES6+)**  
-- *(Optional: React, Bootstrap, or Tailwind CSS if used)*  
 
 ---
 
