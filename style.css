@@ -35,11 +35,11 @@ li {
 }
 
 body, html {
-    width: 100vw;
+    width: 100%;
     background-color: #1A1A1D !important;
     padding: 0;
     margin: 0;
-    overflow-x: hidden;
+    overflow-x: hidden !important;
 }
 
 .info-bar {
@@ -390,9 +390,10 @@ nav a {
 }
 
 .container-first .image img {
-    min-width: 100%;
-    min-width: 100%;
-    height: 100%;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
 }
 
 
@@ -500,6 +501,7 @@ nav a {
 
 .container-third .items .item {
     display: flex;
+    flex-direction: row;
     min-width: 49%;
     max-width: 49%;
     max-height: 100%;
@@ -510,13 +512,14 @@ nav a {
 }
 
 .container-third .items .item div {
-    width: 50%;
+    width: 35%;
     min-height: 100%;
     max-height: 100%;
     overflow: hidden;
 }
 
 .container-third .items .item .content {
+    width: 65%;
     display: flex;
     flex-direction: column;
     gap: 0px;
@@ -524,6 +527,7 @@ nav a {
     justify-content: space-between;
     text-align: start;
     padding: 40px 12px 0px 12px;
+    min-height: 100%;
     max-height: 100%;
 }
 
@@ -535,20 +539,19 @@ nav a {
     cursor: pointer;
     color: var(--color3);
     margin-left: auto;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 10px;
 }
 
 .container-third .items .item .content h4 {
     color: var(--color3);
-    font-size: 24px;
+    font-size: 20px;
 }
 
 .container-third .items .item .content p {
     color: var(--color2);
     position: relative;
     overflow: hidden;
-    max-height: 70%;
 }
 
 .container-third .item .content p::after {
@@ -565,6 +568,38 @@ nav a {
 .container-third .items .item div img {
     height: 100%;
     object-fit: cover;
+}
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden !important;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.sidebar, .overlay, nav, .container {
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+@media (max-width: 600px) {
+    nav {
+        padding: 12px 14px;
+    }
+    nav .nav-logo {
+        min-width: 120px;
+        max-width: 40%;
+    }
+    nav button.menu-btn {
+        display: block;
+    }
+    nav .nav-links {
+        display: none;
+    }
 }
 
 .container-fourth {
@@ -634,7 +669,7 @@ nav a {
 .container-fourth .item .content h4 {
     margin-top: 14px;
     color: var(--color3);
-    font-size: 32px;
+    font-size: 24px;
 }
 
 .container-fourth .item .content p {
@@ -822,8 +857,6 @@ nav a {
 }
 
 
-
-
 @media screen and (max-width:1250px){
 
     .info-bar p {
@@ -976,7 +1009,7 @@ nav a {
 
     .container-fourth .item .content h4 {
         margin-top: 14px;
-        font-size: 25px;
+        font-size: 22px;
     }
 
     .container-fourth .item .content button {
@@ -1234,8 +1267,8 @@ nav a {
     }
 
     .container-fourth .item:hover .content .img {
-        min-height: 45%;
-        max-height: 45%;
+        min-height: 58%;
+        max-height: 58%;
     }
 
     .container-fourth .item:hover .content p {
@@ -1498,8 +1531,8 @@ nav a {
     }
 
     .container-fourth .item:hover .content .img {
-        min-height: 45%;
-        max-height: 45%;
+        min-height: 58%;
+        max-height: 58%;
     }
 
     .container-fourth .item:hover .content p {
@@ -1671,7 +1704,7 @@ nav a {
     }
 
     .container-fourth {
-        height: 1500px;
+        height: 1300px;
         gap: 9px;
         min-height: 88vh;
         padding: 10px 10px 30px 10px;
@@ -1785,25 +1818,40 @@ nav a {
         display: none;
     }
 
-    .container-third {
-        height: 280px;
-        padding: 30px 10px;
+    .container-third{
+        height: 440px;
     }
-
-    .container-third .items .item .content h4 {
-        font-size: 19px;
+    .container-third .items .item {
+        flex-direction: column;
     }
-
-    .container-third .items .item .content p {
-        font-size: 13.3px;
-    }
-
     .container-third .items .item div {
-        width: 40%;
+        width: 100%;
+        max-height: 40%;
+        min-height: 40%;
+    }
+    .container-third .items .item .content {
+        width: 100%;
+        max-height: 60%;
+        min-height: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        align-items: center;
+        justify-content: space-between;
+        text-align: center;
+    }
+    .container-third .items .item .content button {
+        padding: 7px 24px;
+        font-size: 12px;
+        margin-top: 0px;
     }
 
-    .container-third .items .item .content {
-        width: 60%;
+    .container-fourth {
+        height: 1100px;
+    }
+
+    .container-fourth .item .content h4 {
+        font-size: 18px;
     }
 
     .container-last .top .company-info img {
@@ -1880,7 +1928,7 @@ nav a {
     }       
 
     .container-second {
-        height: 1230px;
+        height: 1130px;
     }
 
     .container-second .left {
@@ -1891,7 +1939,7 @@ nav a {
     }
 
     .container-second .left .content {
-        gap: 70px;
+        gap: 50px;
     }
 
     .container-second .left .content div{
@@ -1913,21 +1961,33 @@ nav a {
         margin-top: -2px;
     }
 
+    .container-third .items .item .content{
+        padding: 15px 10px 0px 10px; 
+    }
+
+    .container-third .items .item .content p {
+        font-size: 14px;
+    }
+
     .container-fourth {
-        height: 1300px;
+        height: 1100px;
         gap: 9px;
         min-height: 88vh;
         padding: 10px 10px 30px 10px;   
     }
 
-    .container-fourth h2{
-        font-size: 25px;
+    .container-fourth div h2{
+        font-size: 24px;
     }
 
     .container-fourth .our-services {
         margin-top: 10px;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr;
+    }
+
+    .container-fourth .item .content h4 {
+        font-size: 18px;
     }
 
 
@@ -1977,15 +2037,18 @@ nav a {
 
 }
 
+@media screen and (max-width:410px) {
+    nav .right .phone-number-link {
+        font-size: 14px;
+    }
+}
+
 @media screen and (max-width:395px) {
     nav .right {
         gap: 10px;
     }
     nav .right a {
         font-size: 13.4px;
-    }
-    nav .right a i {
-        display: none;
     }
 
     .overlay {
@@ -2017,11 +2080,11 @@ nav a {
     }
 
     .container-second {
-        height: 1280px;
+        height: 1150px;
     }
 
     .container-second .left .content {
-        gap: 34px;
+        gap: 44px;
         margin-top: 20px;
     }
     .container-third{
@@ -2046,5 +2109,14 @@ nav a {
         justify-content: space-between;
         text-align: center;
     }
+    .container-fourth .our-services .item .content h4{
+        font-size: 18px;
+    }
 
+}
+
+@media screen and (max-width:380px) {
+    nav .right .phone-number-link {
+        font-size: 0px;
+    }
 }
